@@ -18,7 +18,7 @@ const PostCreateTask = async (req: Request, res: Response) => {
 
     return res.status(200).send({
       success: true,
-      message: "Task was created successfully",
+      payload: "Task was created successfully",
     });
   } catch (err: any) {
     return res.status(500).send({
@@ -61,7 +61,7 @@ const PutEditTask = async (req: Request, res: Response) => {
     if (!functions.ValidateCorrectStatus(body.status)) {
       res.status(400).send({
         success: false,
-        message: "Status is not the correct.",
+        payload: "Status is not the correct.",
       });
     }
     body.modified_date = new Date();
